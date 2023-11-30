@@ -17,15 +17,18 @@ app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'notes.html'));
 });
 
+//redirects to the notes page
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+//gets all the notes
 app.get('/api/notes', (req, res) => {
   const notes = getNotes();
   res.json(notes);
 });
 
+//creates a new note
 app.post('/api/notes', (req, res) => {
   const newNote = req.body;
   newNote.id = generateUniqueId(); 
@@ -34,6 +37,15 @@ app.post('/api/notes', (req, res) => {
   writeNotes(notes);
   res.json(newNote);
 });
+
+//deletes the notes based on the id
+app.delete('/api/notes/:id', (req, res) => {
+    const noteId = req.params.id;
+    const notes = getNotes();
+    const updatedNotes = notes.filter((note) => note.id !== noteId);
+    writeNotes(updatedNotes);
+    res.json({ success: true, message: 'Note deleted successfully' });
+  });
 
 // Function to read notes from db.json
 const getNotes = () => {
