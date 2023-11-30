@@ -1,3 +1,11 @@
+const notes = require('express').Router();
+const { readFromFile } = require('../helpers/fsUtils');
+
+// GET Route for retrieving all the tips
+notes.get('/', (req, res) => {
+  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+});
+
 //gets all the notes
 app.get('/api/notes', (req, res) => {
     const notes = getNotes();
@@ -39,3 +47,5 @@ app.get('/api/notes', (req, res) => {
   
     return Date.now().toString();
   };
+
+  module.exports = notes;
