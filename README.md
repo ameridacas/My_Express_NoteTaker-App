@@ -13,6 +13,8 @@ Express.js Note-Taker
 
 #Credits
 
+Heroku-Deploy="https://git.heroku.com/my-express-note-taker-app.git"
+
 Github-Deploy="https://ameridacas.github.io/Express_NoteTaker-App/"
 
 Github-Repo="https://github.com/ameridacas/Express_NoteTaker-App/"
