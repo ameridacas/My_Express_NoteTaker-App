@@ -6,7 +6,9 @@ Express.js Note-Taker
 
 #Mock_UP
 
-![alt My_Express_NoteTaker-App](./public/assets/images/My_Express_NoteTaker-App.jpeg)
+![alt My_Express_NoteTaker-App](./public/assets/images/My_Express_NoteTaker-App.png)
+
+![alt Note-Taker](./public/assets/images/Note-Taker.png)
 
 #Usage
 
